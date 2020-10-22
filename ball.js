@@ -8,7 +8,7 @@ class Box {
     this.body = Bodies.circle(x, y,r, options);
     this.width = r;
     this.height = r;
-    this.image=loadImage("paper.png");
+    
     World.add(world, this.body);
   }
   display(){
@@ -17,8 +17,9 @@ class Box {
     push  ();
     translate(pos.x,pos.y);
     rotate (angle);
-    imageMode(CENTER);
-    image(this.image,0,0, this.width, this.height);
+    ellipseMode(RADIUS);
+    fill(255);
+    ellipse(0,0, this.width, this.height);
     pop();
   }
 };
